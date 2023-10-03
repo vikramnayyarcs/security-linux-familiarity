@@ -1,0 +1,2 @@
+Your flag has been encrypted using AES 256 CBC and your token as password.
+
