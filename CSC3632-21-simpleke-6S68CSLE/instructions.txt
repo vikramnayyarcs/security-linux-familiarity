@@ -1,0 +1,11 @@
+You have to break the protocol in order to get your flag.
+The protocol is based on the first protocol available at https://morisset.gitlab.io/ispag/tutorial/interactive.html. 
+- There are two machines playing the protocol: A and B.
+- The protocol aims to let A and B exchange a secret session key and a secret message.
+
+
+You are provided with a specific version of that protocol, which is deployed at a specific address, provided in the script protocol.sh which executes the protocol cleanly in the way it was meant to run.  Note that you don't have to use protocol.sh, and can simply use the URL provided in the script. 
+
+If you are struggling, try to solve the web-based game from the link above, step by step.
+
+As a hint, this challenge is very close in nature to the followkey challenge, except that this time, you are interacting directly with the server, rather than inspecting the network traffic. As another hint, the encryption key to be used when decrypted should be a integer (and remember that data over the network is normally encoded!). 
