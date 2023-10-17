@@ -72,7 +72,7 @@ function protocol() {
   # Run the protocol
   step1=$(wget -q -O - "$WEBSERVICE_TO_HACK/A.php?step=1")
   echo "$step1"
-  step2=$(wget -q -O - "$WEBSERVICE_TO_HACK/S.php?step=2&data=$(injectB "$step1")")
+  step2=$(wget -q -O - "$WEBSERVICE_TO_HACK/S.php?step=2&data=$(injectB "QSxF")")
   echo "$step2"
   step3=$(wget -q -O - "$WEBSERVICE_TO_HACK/A.php?step=3&data=$(injectA "$step2")")
   echo "$step3"
