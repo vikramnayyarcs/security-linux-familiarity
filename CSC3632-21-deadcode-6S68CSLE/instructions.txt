@@ -1,0 +1,3 @@
+ This practical aims at reproducing the demonstration done during the lecture on Buffer Overflow about executing a piece of dead code, by using a buffer overflow.
+
+You are strongly advised to practice first the attacks given in the lecture material (include those given at https://gitlab.com/morisset/bof) before attempting this practical. 
