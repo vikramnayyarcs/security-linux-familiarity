@@ -1,0 +1,1 @@
+In this challenge, you have the opportunity to exploit some basic XSS attacks. If you are not already familiar with XSS, make sure you've read the material on Canvas and engaged with the exercises provided (especially those defined by Google) before attempting this one! 
