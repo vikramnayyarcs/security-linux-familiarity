@@ -1,0 +1,6 @@
+This challenge is potentially very hard, involving multiple steps.
+
+It starts like Session 1/2, with a tiny difference. And then it gets more complex. There are several approaches to get the flag, but try to be careful not to spend too much time on it.
+
+
+
