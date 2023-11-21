@@ -1,0 +1,8 @@
+Live Policy Evaluation. 
+
+You are provided with a specific policy provided in the attached file.
+  This policy can be evaluated using a specific script (also provided in the attached file), where attribute values of the policy are passed as GET parameters.
+
+For instance, A.php?AAAA=True&BBBB=False will evaluate your policy with the values True for the attribute AAAA and False for BBBB. Attributes with no values are considered to be unknown.
+
+Your objective is to find a combination of attributes such that the policy evaluates to True, and you will get the flag. 
