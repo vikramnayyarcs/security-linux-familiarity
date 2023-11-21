@@ -1,0 +1,5 @@
+Access Control Policy
+
+The problem is a bit different from the from the one in "Access Control Evaluation". You must now define a policy which respects the policy specification given in the attached file policy_info.txt. You must then pass this policy as a GET parameter "policy" to the script given policy_info.txt. 
+  
+For instance, if the specification asks for a policy P which evaluates to Permit if A and B are True, else to Deny, you could submit: A.php?policy="R1: Permit if AND(A, B)\nP DUP(R1, R1)". Note that multiple rules/policies must be separated by a "\n" character. Please also note that the name of the final (normally P) must match.  
