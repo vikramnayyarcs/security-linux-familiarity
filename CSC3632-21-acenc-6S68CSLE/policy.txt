@@ -1,0 +1,7 @@
+R1: Deny if OR(ZFW, SWW)
+R2: Permit if AND(ZFW, SWW)
+P1: DOV(R1, R2)
+R3: Permit if AND(BGO, OQN)
+R4: Deny if MWV
+P2: DOV(R3, R4)
+P: DOV(P1, P2)

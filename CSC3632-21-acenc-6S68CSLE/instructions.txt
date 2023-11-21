@@ -1,0 +1,14 @@
+Access Control Encryption
+
+  Your flag has been encrypted using AES 256 CBC, in a very similar way than for the
+  AES Challenge.
+
+  However, this time, the key is obtained by the concatenation of attributes that must be true in order for the policy in the file policy.txt to evaluate to Permit, written in lexicographical ordering. 
+
+For instance, if the policy is
+  R1: Deny if KAP
+  R2: Permit if AND(BEF, BAP)
+  P : POV(R1, R2)
+
+then the key is BAPBEF. To help you with the task, in order to make sure you are using the correct decryption method, the test file test.enc has been encrypted with the key BAPBEF and included in the challenge. Note there is no flag in that file, it's only for testing purposes.  
+
