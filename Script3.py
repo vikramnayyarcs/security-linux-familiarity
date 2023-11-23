@@ -18,7 +18,7 @@ combinations = list(product([True, False], repeat=6))
 for combo in combinations:
     url = "http://10.0.0.6/ctf_deploy/accomplex/254sIh4xGs/flag.php?"
     for var, value in zip(variables, combo):
-        url += f"{var}={value}_"
+        url += f"{var}={value}&"
     url = url[:-1]  # Remove the trailing underscore
 
     try:
