@@ -11,7 +11,7 @@ e = 3
 f = 4
 g = 5
 
-variables = ['ASKOZV', 'OXRVNQ', 'OMNEAS', 'ASKOZV', 'AMYHHR', 'BGLJGP']
+variables = ['ASKOZV', 'OXRVNQ', 'OMNEAS', 'RXQEOY', 'AMYHHR', 'BGLJGP']
 
 combinations = list(product([True, False], repeat=6))
 
