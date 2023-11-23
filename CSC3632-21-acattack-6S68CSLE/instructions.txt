@@ -1,0 +1,32 @@
+AC Attack.
+
+
+
+You are provided with a binary file "getflag" which contacts a PDP server
+with some access control attributes, and if the PDP server permits the request,
+then "getflag" will output the flag (which is stored in the binary file). 
+
+The first time you attempt this CTF on a machine, you first need to run
+"sudo sh setup.sh", which will configure the right IP address for
+the PDP server. 
+
+For added security, getflag and the pdp use a shared secret and a nonce in the
+communication. Assuming getflag runs on the agent A, the protocol is:
+
+Initial Knowledge
+A: [Attributes, Secret]
+PDP: [Decision, Secret]
+
+Steps
+1. A -> PDP: Attributes, #NA
+2. PDP -> A: Decision, MD5(Decision + Secret + NA)
+
+where "+" denotes string concatenation. The Secret is a string of exactly two
+uppercase letters. For instance, if the secret is AB, the nonce is DEFG and the
+decision is Deny, the PDP will return Deny, MD5("DenyABDEFG"). Since getflag
+knows the secret and the nonce, it can compute the MD5 hash to ensure that the
+decision from the PDP server is indeed Permit, in which case it will print the
+flag.
+
+Good luck! 
+
