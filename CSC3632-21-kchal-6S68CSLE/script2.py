@@ -21,6 +21,9 @@ def check_k_anonymity(params, k_anonymity_target):
         print("Flag found! Exiting.")
         exit()
 
+    # Clear cookies
+    response.cookies.clear()
+
     # Close the webpage
     response.close()
 
