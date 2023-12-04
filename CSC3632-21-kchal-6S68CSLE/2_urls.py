@@ -55,7 +55,7 @@ while True:
         url_2_params = {option: 'on' for option in options[:k_anonymity_target]}
 
         # URL 2 with parameters
-        url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?{urlencode(url_2_params)}"
+        url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php?{urlencode(url_2_params)}"
 
         response_2 = requests.get(url_2)
         print("***AFTER URL 2:***")
