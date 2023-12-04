@@ -26,9 +26,13 @@ while True:
 
             print(response_2.text)
 
+            response_2.cookies.clear()
+
         elif k_anonymity_target == 4: 
             url_2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideLastThreeDigitZIP=on&hideGender=on "
     
             response_2 = requests.get(url_2)
 
             print(response_2.text)
+
+            response_2.cookies.clear()
