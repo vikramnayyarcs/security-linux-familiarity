@@ -32,35 +32,40 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 # Find the line containing "Select a combination of modifiers so that the resulting table has a k-anonymity equal to:"
 target_line = soup.find('div', text=lambda text: 'Select a combination of modifiers so that the resulting table has a k-anonymity equal to:' in text)
-k_anonymity_line = target_line.find_next('p').text
 
-# Extract the K-anonymity value from the line
-k_anonymity = int(''.join(filter(str.isdigit, k_anonymity_line)))
+# Check if target_line is not None before accessing its attributes
+if target_line:
+    k_anonymity_line = target_line.find_next('p').text
 
-# List of options
-options = [
-    'hideMonthDoB',
-    'hideGender',
-    'hideLastThreeDigitZIP',
-    'hideLastFourDigitZIP',
-    'hideLastTwoDigitZIP',
-    'hideLastDigitZIP',
-    'hideLastFiveDigitZIP',
-    'hideDayDoB',
-    'hideYearDoB',
-]
+    # Extract the K-anonymity value from the line
+    k_anonymity = int(''.join(filter(str.isdigit, k_anonymity_line)))
 
-# URL for making requests
-base_url = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php"
+    # List of options
+    options = [
+        'hideMonthDoB',
+        'hideGender',
+        'hideLastThreeDigitZIP',
+        'hideLastFourDigitZIP',
+        'hideLastTwoDigitZIP',
+        'hideLastDigitZIP',
+        'hideLastFiveDigitZIP',
+        'hideDayDoB',
+        'hideYearDoB',
+    ]
 
-# Continue making attempts until 'flag' is found
-while True:
-    # Generate all possible combinations of options
-    combinations = list(product(['on', ''], repeat=len(options)))
+    # URL for making requests
+    base_url = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php"
 
-    # Use ThreadPoolExecutor to parallelize requests
-    with ThreadPoolExecutor(max_workers=concurrent.futures.thread._threads_queues.MaxSize) as executor:
-        executor.map(check_k_anonymity, [{option: state for option, state in zip(options, combo)} for combo in combinations])
+    # Continue making attempts until 'flag' is found
+    while True:
+        # Generate all possible combinations of options
+        combinations = list(product(['on', ''], repeat=len(options)))
 
-    # Add your code here to close the web page if needed
-    print(f"No successful attempt for K-anonymity {k_anonymity}. Retrying...")
+        # Use ThreadPoolExecutor to parallelize requests
+        with ThreadPoolExecutor(max_workers=concurrent.futures.thread._threads_queues.MaxSize) as executor:
+            executor.map(check_k_anonymity, [{option: state for option, state in zip(options, combo)} for combo in combinations])
+
+        # Add your code here to close the web page if needed
+        print(f"No successful attempt for K-anonymity {k_anonymity}. Retrying...")
+else:
+    print("Target line not found. Check the HTML structure.")
