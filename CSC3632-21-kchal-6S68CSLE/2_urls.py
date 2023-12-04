@@ -45,19 +45,19 @@ while True:
 
         # List of options for URL 2
         options = [
-            # 'hideMonthDoB',
-            # 'hideGender',
+            'hideMonthDoB',
+            'hideGender',
             # 'hideLastThreeDigitZIP',
             # 'hideLastFourDigitZIP',
             # 'hideLastTwoDigitZIP',
             # 'hideLastDigitZIP',
-            # 'hideLastFiveDigitZIP',
-            # 'hideDayDoB',
+            'hideLastFiveDigitZIP',
+            'hideDayDoB',
             # 'hideYearDoB',
-            'Hide Month of DoB on',
-            'Hide Day of DoB',
-            'Hide Last Five Digits of ZIP',
-            'Hide Gender on'
+            # 'Hide Month of DoB on',
+            # 'Hide Day of DoB',
+            # 'Hide Last Five Digits of ZIP',
+            # 'Hide Gender on'
         ]
 
         # URL 2 with parameters
