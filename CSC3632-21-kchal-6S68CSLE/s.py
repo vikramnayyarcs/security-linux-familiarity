@@ -1,8 +1,5 @@
 import requests
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+import execjs
 
 # Make a session object
 session = requests.Session()
@@ -17,26 +14,16 @@ response1 = session.get(url1)
 # Extract the relevant JavaScript code from the HTML response
 script_code = response1.text.split('<script>', 1)[1].split('</script>', 1)[0]
 
-# Set up a headless Chrome browser
-options = webdriver.ChromeOptions()
-options.add_argument("--headless")  # Run headless (without opening a browser window)
-driver = webdriver.Chrome(options=options)
+# Execute the JavaScript code using PyExecJS
+context = execjs.compile(script_code)
 
-try:
-    # Load the extracted JavaScript code into the browser
-    driver.execute_script(script_code)
+# Call the JavaScript function if available
+if 'computePrivacyFromForm' in context:
+    data2 = context.call('computePrivacyFromForm', 'table6', 'table-output6', 4, 17)
+    solution = context.call('generate_string', data2)
 
-    # Wait for the script to execute
-    element_present = EC.presence_of_element_located((By.ID, 'table6'))
-    WebDriverWait(driver, 1).until(element_present)  # Adjust timeout if needed
-
-    # Additional actions if needed after script execution
-    # For example, you can print the updated HTML content
-    print(driver.page_source)
-
-finally:
-    # Close the browser window
-    driver.quit()
+    # Optionally, you can print the solution
+    print(f"Solution: {solution}")
 
 # Make the second request using the same session
 response2 = session.get(url2)
