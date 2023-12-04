@@ -15,12 +15,7 @@ while True:
     response2 = session.get(url2)
 
     # Print the content of the second response
-    if "solution" in response2.text:
-        print(response2.text)
-        session.cookies.clear()
-        break 
-    else:
-        print("GOING AGAIN")
+    print(response2.text)
 
     # Optionally, you can clear cookies after the second request if needed
     session.cookies.clear()
