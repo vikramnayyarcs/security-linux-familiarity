@@ -33,8 +33,7 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 # Find the K-anonymity value directly from the <p> element
 k_anonymity_element = soup.find('p', text=lambda text: 'k-anonymity equal to:' in text)
-
-print(f"K ANONYMITY TARGET: {k_anonymity_element}")
+print(f"TARGET: {k_anonymity_target}")
 
 # Check if k_anonymity_element is not None before accessing its attributes
 if k_anonymity_element:
