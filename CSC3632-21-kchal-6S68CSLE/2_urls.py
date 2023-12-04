@@ -65,6 +65,7 @@ while True:
 
         if 'flag' in response_2.text:
             print("Flag found! Exiting.")
+            print(response_2.text)
             exit()
 
         
