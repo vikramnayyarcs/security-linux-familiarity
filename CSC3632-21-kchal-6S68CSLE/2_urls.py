@@ -54,40 +54,13 @@ while True:
             'hideLastFiveDigitZIP',
             'hideDayDoB',
             'hideYearDoB',
-        ]
-
-        if k_anonymity_target == 2:
-            options = [
-            # 'hideMonthDoB',
-            # 'hideGender',
-            'hideLastThreeDigitZIP',
-            # 'hideLastFourDigitZIP',
-            # 'hideLastTwoDigitZIP',
-            # 'hideLastDigitZIP',
-            # 'hideLastFiveDigitZIP',
-            'hideDayDoB',
-            # 'hideYearDoB',
-        ]
-            
-            if k_anonymity_target == 4:
-                options = [
-                # 'hideMonthDoB',
-                'hideGender',
-                'hideLastThreeDigitZIP',
-                # 'hideLastFourDigitZIP',
-                # 'hideLastTwoDigitZIP',
-                # 'hideLastDigitZIP',
-                # 'hideLastFiveDigitZIP',
-                'hideDayDoB',
-                # 'hideYearDoB',
-            ]
+        ]   
 
         url_2_params = {option: 'on' for option in options[:k_anonymity_target]}
 
         # URL 2 with parameters
         url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php?{urlencode(url_2_params)}"
 
-        print(f"URL 2: {url_2}")
         
         
 
