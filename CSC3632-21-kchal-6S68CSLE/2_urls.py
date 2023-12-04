@@ -43,6 +43,8 @@ while True:
         # Extract the K-anonymity value from the element's text
         k_anonymity_target = int(''.join(filter(str.isdigit, k_anonymity_element.text)))
 
+        print(f"TARGET: {k_anonymity_target}")
+
         # List of options for URL 2
         options = [
             'hideMonthDoB',
@@ -54,17 +56,16 @@ while True:
             'hideLastFiveDigitZIP',
             'hideDayDoB',
             'hideYearDoB',
-        ]   
+        ]
+            
 
         url_2_params = {option: 'on' for option in options[:k_anonymity_target]}
 
         # URL 2 with parameters
-        url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideLastThreeDigitZIP=on"
+        url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php?{urlencode(url_2_params)}"
 
-        response_2 = requests.get(url_2)
-        if "flag" in response_2.text:
-            print(response_2.text)
-            exit()        
+        
+        
 
         # Send a request to URL 2 with ThreadPoolExecutor
         with ThreadPoolExecutor(max_workers=1) as executor:
