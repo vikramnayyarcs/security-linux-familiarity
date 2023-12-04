@@ -47,13 +47,13 @@ while True:
         options = [
             'hideMonthDoB',
             'hideGender',
-            # 'hideLastThreeDigitZIP',
-            # 'hideLastFourDigitZIP',
-            # 'hideLastTwoDigitZIP',
+            'hideLastThreeDigitZIP',
+            'hideLastFourDigitZIP',
+            'hideLastTwoDigitZIP',
             'hideLastDigitZIP',
             'hideLastFiveDigitZIP',
             'hideDayDoB',
-            # 'hideYearDoB',
+            'hideYearDoB',
 
         ]
 
