@@ -6,7 +6,7 @@ session = requests.Session()
 # Define the URLs
 url1 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php"
 url2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideLastThreeDigitZIP=on&hideYearDoB=on"
-url3 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/PKHGDNHMXH.php?solution=%27DoB,ZIP%20code,Gender,Disease\n30/08/1970,12156,M,Angina%20Pectoris%20\n17/08/1960,12154,F,Stroke\n23/08/1970,12153,M,High%20Cholesterol%20\n07/08/1970,12141,F,High%20Cholesterol%20\n20/09/1970,12143,F,Cardiomyopathy%20\n02/08/1960,12153,F,Stroke\n10/09/1960,12158,F,Angina%20Pectoris%20\n12/09/1960,12159,F,Cardiomyopathy\n02/09/1960,12147,F,Hepatitis\n04/09/1970,12152,M,Hepatitis%20\n10/08/1960,12140,F,Stroke\n05/09/1960,12145,M,Flu\n12/09/1970,12148,F,Eczema%20\n05/09/1970,12155,M,Pneumonia%20\n20/08/1960,12141,F,Stroke\n05/08/1970,12142,F,Erythema%27"
+url3 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/PKHGDNHMXH.php?solution=%27DoB,ZIP%20code,Gender,Disease\n30/08/1970,1215*,*,Angina%20Pectoris%20\n17/08/1960,1215*,*,Stroke\n23/08/1970,1215*,*,High%20Cholesterol%20\n07/08/1970,1214*,*,High%20Cholesterol%20\n20/09/1970,1214*,*,Cardiomyopathy%20\n02/08/1960,1215*,*,Stroke\n10/09/1960,1215*,*,Angina%20Pectoris%20\n12/09/1960,1215*,*,Cardiomyopathy\n02/09/1960,1214*,*,Hepatitis\n04/09/1970,1215*,*,Hepatitis%20\n10/08/1960,1214*,*,Stroke\n05/09/1960,1215*,*,Flu\n12/09/1970,1215*,*,Eczema%20\n05/09/1970,1215*,*,Pneumonia%20\n20/08/1960,1214*,*,Stroke\n05/08/1970,1214*,*,Erythema%27"
 
 # Make the first request and store cookies in the session
 response1 = session.get(url1)
