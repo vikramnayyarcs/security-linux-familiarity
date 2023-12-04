@@ -5,7 +5,7 @@ session = requests.Session()
 
 # Define the URLs
 url1 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php"
-url2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideMonthDoB=on&hideLastDigitZIP=on "
+url2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideLastThreeDigitZIP=on"
 
 # Make the first request and store cookies in the session
 response1 = session.get(url1)
