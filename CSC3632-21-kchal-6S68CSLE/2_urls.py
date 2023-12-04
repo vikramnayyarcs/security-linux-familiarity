@@ -61,8 +61,10 @@ while True:
         # URL 2 with parameters
         url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideLastThreeDigitZIP=on"
 
-        
-        
+        response_2 = requests.get(url_2)
+        if "flag" in response_2.text:
+            print(response_2.text)
+            exit()        
 
         # Send a request to URL 2 with ThreadPoolExecutor
         with ThreadPoolExecutor(max_workers=1) as executor:
