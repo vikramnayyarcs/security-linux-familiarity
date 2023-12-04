@@ -30,8 +30,8 @@ url = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php"
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
 
-# Find the line containing "Select a combination of modifiers so that the resulting table has a k-anonymity equal to:"
-target_line = soup.find('div', text=lambda text: 'Select a combination of modifiers so that the resulting table has a k-anonymity equal to:' in text)
+# Find the target line using a CSS selector
+target_line = soup.select_one('div:contains("Select a combination of modifiers so that the resulting table has a k-anonymity equal to:")')
 
 # Check if target_line is not None before accessing its attributes
 if target_line:
