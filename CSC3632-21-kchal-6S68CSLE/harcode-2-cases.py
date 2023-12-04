@@ -16,10 +16,7 @@ def check_k_anonymity(params, k_anonymity_target):
         log_file.write(f"Response: {response.status_code}\n")
         log_file.write(f"Content: {response.text}\n\n")
 
-    # Check if 'flag' is in the response text
-    if 'flag' in response.text:
-        print("Flag found! Exiting.")
-        exit()
+    print(response.text)
 
     # Clear cookies
     response.cookies.clear()
