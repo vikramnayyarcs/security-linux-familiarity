@@ -21,6 +21,7 @@ print(response2.text)
 response3 = session.get(url3)
 print("**RESPONSE 3**")
 print(response3.text)
+print("Response 3 Status Code:", response3.status_code)
 
 # Optionally, you can clear cookies after the second request if needed
 session.cookies.clear()
