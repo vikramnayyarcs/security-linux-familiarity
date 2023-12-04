@@ -50,14 +50,11 @@ while True:
             # 'hideLastThreeDigitZIP',
             # 'hideLastFourDigitZIP',
             # 'hideLastTwoDigitZIP',
-            # 'hideLastDigitZIP',
+            'hideLastDigitZIP',
             'hideLastFiveDigitZIP',
             'hideDayDoB',
             # 'hideYearDoB',
-            # 'Hide Month of DoB on',
-            # 'Hide Day of DoB',
-            # 'Hide Last Five Digits of ZIP',
-            # 'Hide Gender on'
+
         ]
 
         # URL 2 with parameters
