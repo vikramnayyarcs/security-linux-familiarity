@@ -30,15 +30,13 @@ url = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php"
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
 
-# Find the target line using a CSS selector
-target_line = soup.select_one('div:contains("Select a combination of modifiers so that the resulting table has a k-anonymity equal to:")')
+# Find the K-anonymity value directly from the <p> element
+k_anonymity_element = soup.find('p', text=lambda text: 'k-anonymity equal to:' in text)
 
-# Check if target_line is not None before accessing its attributes
-if target_line:
-    k_anonymity_line = target_line.find_next('p').text
-
-    # Extract the K-anonymity value from the line
-    k_anonymity = int(''.join(filter(str.isdigit, k_anonymity_line)))
+# Check if k_anonymity_element is not None before accessing its attributes
+if k_anonymity_element:
+    # Extract the K-anonymity value from the element's text
+    k_anonymity = int(''.join(filter(str.isdigit, k_anonymity_element.text)))
 
     # List of options
     options = [
@@ -68,4 +66,4 @@ if target_line:
         # Add your code here to close the web page if needed
         print(f"No successful attempt for K-anonymity {k_anonymity}. Retrying...")
 else:
-    print("Target line not found. Check the HTML structure.")
+    print("K-anonymity element not found. Check the HTML structure.")
