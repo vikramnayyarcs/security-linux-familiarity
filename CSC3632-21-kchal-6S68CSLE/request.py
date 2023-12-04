@@ -1,14 +1,20 @@
 import requests
 
+# Make a session object
+session = requests.Session()
 
-# then make a url variable
+# Define the URLs
 url1 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php"
 url2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideLastTwoDigitZIP=on"
 
-request_1 = requests.get(url1)
+# Make the first request and store cookies in the session
+response1 = session.get(url1)
 
-request_2 = requests.get(url2)
+# Make the second request using the same session
+response2 = session.get(url2)
 
-print(request_2.text)
+# Print the content of the second response
+print(response2.text)
 
-request_2.cookies.clear()
+# Optionally, you can clear cookies after the second request if needed
+session.cookies.clear()

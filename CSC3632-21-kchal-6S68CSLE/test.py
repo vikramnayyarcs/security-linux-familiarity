@@ -8,3 +8,4 @@ url2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&
 # then call the default open method described above
 webbrowser.open(url1)
 webbrowser.open(url2)
+
