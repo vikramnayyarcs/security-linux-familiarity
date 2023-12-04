@@ -43,8 +43,6 @@ while True:
         # Extract the K-anonymity value from the element's text
         k_anonymity_target = int(''.join(filter(str.isdigit, k_anonymity_element.text)))
 
-        print(f"TARGET: {k_anonymity_target}")
-
         # List of options for URL 2
         options = [
             'hideMonthDoB',
@@ -64,7 +62,8 @@ while True:
         # URL 2 with parameters
         url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php?{urlencode(url_2_params)}"
 
-        
+        response_2 = requests.get(url_2)
+        print(response_2.text)
         
 
         # Send a request to URL 2 with ThreadPoolExecutor
