@@ -54,8 +54,33 @@ while True:
             'hideLastFiveDigitZIP',
             'hideDayDoB',
             'hideYearDoB',
-
         ]
+
+        if k_anonymity_target == 2:
+            options = [
+            # 'hideMonthDoB',
+            # 'hideGender',
+            'hideLastThreeDigitZIP',
+            # 'hideLastFourDigitZIP',
+            # 'hideLastTwoDigitZIP',
+            # 'hideLastDigitZIP',
+            # 'hideLastFiveDigitZIP',
+            'hideDayDoB',
+            # 'hideYearDoB',
+        ]
+            
+            if k_anonymity_target == 4:
+                options = [
+                # 'hideMonthDoB',
+                'hideGender',
+                'hideLastThreeDigitZIP',
+                # 'hideLastFourDigitZIP',
+                # 'hideLastTwoDigitZIP',
+                # 'hideLastDigitZIP',
+                # 'hideLastFiveDigitZIP',
+                'hideDayDoB',
+                # 'hideYearDoB',
+            ]
 
         url_2_params = {option: 'on' for option in options[:k_anonymity_target]}
 
