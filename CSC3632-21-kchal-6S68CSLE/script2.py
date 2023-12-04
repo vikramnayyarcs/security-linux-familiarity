@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 # Function to make a request and check K-anonymity
 def check_k_anonymity(params, k_anonymity_target):
-    base_url = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php"
+    base_url = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php"
     full_url = f"{base_url}?{urlencode(params)}"
     response = requests.get(full_url)
 
@@ -54,11 +54,13 @@ if k_anonymity_element:
 
     # Use ThreadPoolExecutor to parallelize requests
     with ThreadPoolExecutor(max_workers=10) as executor:  # You can adjust the number of max workers as needed
-        # Generate all possible combinations of options
-        combinations = list(product(['on', ''], repeat=len(options)))
+        # Generate all possible combinations of options with each parameter set to 'on'
+        combinations = [{'hideMonthDoB': 'on', 'hideGender': 'on', 'hideLastThreeDigitZIP': 'on',
+                          'hideLastFourDigitZIP': 'on', 'hideLastTwoDigitZIP': 'on', 'hideLastDigitZIP': 'on',
+                          'hideLastFiveDigitZIP': 'on', 'hideDayDoB': 'on', 'hideYearDoB': 'on'}]
 
         # Submit tasks to the executor
-        executor.map(check_k_anonymity, [{option: state for option, state in zip(options, combo)} for combo in combinations], [k_anonymity_target]*len(combinations))
+        executor.map(check_k_anonymity, combinations, [k_anonymity_target]*len(combinations))
 
     # Close the initial webpage
     response.close()
