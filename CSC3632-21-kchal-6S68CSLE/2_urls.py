@@ -61,6 +61,8 @@ while True:
 
         # URL 2 with parameters
         url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php?{urlencode(url_2_params)}"
+
+        print(f"URL 2: {url_2}")
         
         
 
