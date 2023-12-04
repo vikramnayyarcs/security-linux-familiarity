@@ -27,4 +27,4 @@ while True:
 
     response_2 = requests.get(url_2)
 
-    print(response_2)
+    print(response_2.text)
