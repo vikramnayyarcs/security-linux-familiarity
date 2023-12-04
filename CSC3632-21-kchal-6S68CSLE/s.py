@@ -1,5 +1,5 @@
 import requests
-import execjs
+from py_mini_racer import py_mini_racer
 
 # Make a session object
 session = requests.Session()
@@ -14,16 +14,12 @@ response1 = session.get(url1)
 # Extract the relevant JavaScript code from the HTML response
 script_code = response1.text.split('<script>', 1)[1].split('</script>', 1)[0]
 
-# Execute the JavaScript code using PyExecJS
-context = execjs.compile(script_code)
+# Execute the JavaScript code using PyMiniRacer
+js_engine = py_mini_racer.MiniRacer()
+result = js_engine.execute(script_code)
 
-# Call the JavaScript function if available
-if 'computePrivacyFromForm' in context:
-    data2 = context.call('computePrivacyFromForm', 'table6', 'table-output6', 4, 17)
-    solution = context.call('generate_string', data2)
-
-    # Optionally, you can print the solution
-    print(f"Solution: {solution}")
+# Print the result (if needed)
+print(result)
 
 # Make the second request using the same session
 response2 = session.get(url2)
