@@ -14,9 +14,17 @@ response1 = session.get(url1)
 # Extract the relevant JavaScript code from the HTML response
 script_code = response1.text.split('<script>', 1)[1].split('</script>', 1)[0]
 
+# Wrap the JavaScript code to form a valid function call
+wrapped_code = f"""
+function executeCode() {{
+    {script_code}
+}}
+executeCode();
+"""
+
 # Execute the JavaScript code using PyMiniRacer
 js_engine = py_mini_racer.MiniRacer()
-result = js_engine.execute(script_code)
+result = js_engine.execute(wrapped_code)
 
 # Print the result (if needed)
 print(result)
