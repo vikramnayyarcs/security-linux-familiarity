@@ -1,4 +1,5 @@
 import requests
+import webbrowser
 
 # Make a session object
 session = requests.Session()
@@ -17,9 +18,10 @@ response2 = session.get(url2)
 # Print the content of the second response
 print(response2.text)
 
-response3 = session.get(url3)
-print("**RESPONSE 3**")
-print(response3.text)
+# response3 = session.get(url3)
+# print("**RESPONSE 3**")
+# print(response3.text)
+webbrowser.open(url3)
 
 # Optionally, you can clear cookies after the second request if needed
 session.cookies.clear()
