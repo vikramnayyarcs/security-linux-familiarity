@@ -29,26 +29,3 @@ hardcoded_ks = {
     4: "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideLastThreeDigitZIP=on&hideGender=on",
     # 5: "",
 }
-
-#Add here.
-if k_anonymity_target == 2:
-    request_2 = requests.get(hardcoded_ks[2])
-
-    print(request_2.text)
-
-    if "flag" in request_2.text:
-        exit()
-
-if k_anonymity_target == 4:
-    request_2 = requests.get(hardcoded_ks[4])
-
-    print(request_2.text)
-
-    if "flag" in request_2.text:
-        exit()
-
-
-
-#Print the response.
-
-#If 'flag' is in response.text, exit()
