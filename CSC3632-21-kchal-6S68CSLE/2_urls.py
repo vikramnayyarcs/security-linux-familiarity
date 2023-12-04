@@ -58,11 +58,9 @@ while True:
         ]
 
         # URL 2 with parameters
-        # url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php?{urlencode(url_2_params)}"
+        url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php?{urlencode(url_2_params)}"
         
-        #Always 2:
-        url_2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideMonthDoB=on&hideDayDoB=on&hideLastFiveDigitZIP=on&hideGender=on"
-
+        
 
         # Send a request to URL 2 with ThreadPoolExecutor
         with ThreadPoolExecutor(max_workers=1) as executor:
