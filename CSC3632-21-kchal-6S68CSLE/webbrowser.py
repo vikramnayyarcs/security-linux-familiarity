@@ -14,4 +14,5 @@ url_two = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideMonthDo
 
 # Call the function to clear cookies for the specified URL
 while True:
-    clear_cookies_for_url(url_to_clear_cookies)
+    clear_cookies_for_url(url_one)
+    clear_cookies_for_url(url_two)
