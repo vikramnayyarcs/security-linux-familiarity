@@ -16,13 +16,13 @@ def check_k_anonymity(params):
     print(f"Content: {response.text}")
     print()
 
-    # Clear cookies (PHPSESSIONID)
-    response.cookies.clear()
-
     # Check if 'flag' is in the response text
     if 'flag' in response.text:
         print("Flag found! Exiting.")
         exit()
+
+    # Close the webpage
+    response.close()
 
 # URL to visit
 url = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php"
@@ -33,6 +33,8 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 # Find the K-anonymity value directly from the <p> element
 k_anonymity_element = soup.find('p', text=lambda text: 'k-anonymity equal to:' in text)
+
+print(f"K ANONYMITY TARGET: {k_anonymity_element}")
 
 # Check if k_anonymity_element is not None before accessing its attributes
 if k_anonymity_element:
@@ -60,7 +62,9 @@ if k_anonymity_element:
         # Submit tasks to the executor
         executor.map(check_k_anonymity, [{option: state for option, state in zip(options, combo)} for combo in combinations])
 
-    # Add your code here to close the web page if needed
+    # Close the initial webpage
+    response.close()
+
     print(f"No successful attempt for K-anonymity {k_anonymity}. Retrying...")
 else:
     print("K-anonymity element not found. Check the HTML structure.")
