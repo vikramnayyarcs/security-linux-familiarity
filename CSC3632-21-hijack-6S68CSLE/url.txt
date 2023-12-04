@@ -1,0 +1,7 @@
+Login: http://10.0.0.5/ctf_deploy2/hijack/z422spDc/login.php
+
+username: user_YIUAUCMHXK
+password: AnnHrU6n
+
+Simulate root: http://10.0.0.5/ctf_deploy2/hijack/z422spDc/simulate_root.php
+

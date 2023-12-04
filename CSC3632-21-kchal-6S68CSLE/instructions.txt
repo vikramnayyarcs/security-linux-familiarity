@@ -1,0 +1,22 @@
+
+Computational challenges is a tool used by a server to mitigate DoS attack:
+the server requests the client to solve a puzzle before enabling the
+connection. This will slow down the attack but will also provide a negative
+incentive for the attacker, since computing the puzzle can be expensive.
+See e.g. https://arxiv.org/pdf/1710.11021.pdf for further details if you are
+interested (note: reading this article is NOT needed to solve the CTF!). 
+
+In this CTF, you have to handle a server that uses a new type of challenge:
+it provides you will a table of k-anonymity equal to 1, and asks the client
+to compute a modification to the table respecting some expected k-anonymity,
+which will change every time the page is loaded.
+
+To make things more challenging, the server only allows one attempt every 10
+minutes, and forces the answer to be provided within 2 seconds.
+
+Your specific address is: 
+
+http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php
+
+If you can solve the k-anonymity challenge within 2 seconds, you should get
+the flag! 

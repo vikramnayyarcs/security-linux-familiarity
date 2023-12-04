@@ -1,0 +1,9 @@
+Hi Jack!
+
+To solve this challenge, you first need to login to the login page provided in the url.txt file, with the username and password as provided, which corresponds to a user with regular privilege. 
+
+You are then provided with a specific script which enables you to simulate a root user loging to the login page and adding a comment to the comment page. Note that this script might need a few seconds to fully execute. 
+
+As usual, your goal is to get the flag! This is intended to be a difficult CTF, combining multiple techniques covered and requiring some creativity and originality. 
+
+
