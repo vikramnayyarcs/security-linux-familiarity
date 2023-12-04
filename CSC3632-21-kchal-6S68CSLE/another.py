@@ -47,22 +47,29 @@ while True:
 
         # List of options for URL 2
         options = [
-            'hideMonthDoB',
-            'hideGender',
-            'hideLastThreeDigitZIP',
-            'hideLastFourDigitZIP',
-            'hideLastTwoDigitZIP',
-            'hideLastDigitZIP',
-            'hideLastFiveDigitZIP',
-            'hideDayDoB',
-            'hideYearDoB',
+            # 'hideMonthDoB',
+            # 'hideGender',
+            # 'hideLastThreeDigitZIP',
+            # 'hideLastFourDigitZIP',
+            # 'hideLastTwoDigitZIP',
+            # 'hideLastDigitZIP',
+            # 'hideLastFiveDigitZIP',
+            # 'hideDayDoB',
+            # 'hideYearDoB',
+            'Hide Month of DoB on',
+            'Hide Day of DoB',
+            'Hide Last Five Digits of ZIP',
+            'Hide Gender on'
         ]
 
         # Adjust parameters to achieve the desired K-anonymity
         url_2_params = {option: 'on' for option in options[:k_anonymity_target]}
 
         # URL 2 with parameters
-        url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php?{urlencode(url_2_params)}"
+        # url_2 = f"http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JGWPPWTCHR.php?{urlencode(url_2_params)}"
+        
+        #Always 2:
+        url_2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideMonthDoB=on&hideDayDoB=on&hideLastFiveDigitZIP=on&hideGender=on"
 
         # Submit the request to URL 2
         check_k_anonymity(url_2_params, k_anonymity_target)
