@@ -40,6 +40,9 @@ while True:
         for i in range(2**len(options)):
             url_2_params = {options[j]: 'on' if (i & (1 << j)) != 0 else 'off' for j in range(len(options))}
 
+            # Remove parameters with value 'off'
+            url_2_params = {key: value for key, value in url_2_params.items() if value == 'on'}
+
             # URL 2 with parameters
             url_2 = f"{url_2_base}?{urlencode(url_2_params)}"
 
@@ -62,4 +65,3 @@ while True:
         print("K-anonymity element not found. Check the HTML structure.")
 
     # Wait for 1 second before the next attempt
-    time.sleep(1)
