@@ -22,9 +22,13 @@ while True:
 
         if k_anonymity_target == 2: 
             url_2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideLastThreeDigitZIP=on"
+            response_2 = requests.get(url_2)
+
+            print(response_2.text)
+
         elif k_anonymity_target == 4: 
             url_2 = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php?hideDayDoB=on&hideLastThreeDigitZIP=on&hideGender=on "
+    
+            response_2 = requests.get(url_2)
 
-    response_2 = requests.get(url_2)
-
-    print(response_2.text)
+            print(response_2.text)
