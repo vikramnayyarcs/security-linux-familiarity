@@ -1,15 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlencode
-from itertools import product  # Import the product function
+from itertools import product
 from concurrent.futures import ThreadPoolExecutor
-import concurrent.futures.thread
 
 # Function to make a request and check K-anonymity
 def check_k_anonymity(params):
+    base_url = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php"
     full_url = f"{base_url}?{urlencode(params)}"
     response = requests.get(full_url)
-    
+
     # Log the attempt
     print(f"Attempted URL: {full_url}")
     print(f"Response: {response.status_code}")
@@ -52,19 +52,15 @@ if k_anonymity_element:
         'hideYearDoB',
     ]
 
-    # URL for making requests
-    base_url = "http://10.0.0.5/ctf_deploy2/kchal/Clyhbjgi/JTDIFDVIUX.php"
-
-    # Continue making attempts until 'flag' is found
-    while True:
+    # Use ThreadPoolExecutor to parallelize requests
+    with ThreadPoolExecutor(max_workers=10) as executor:  # You can adjust the number of max workers as needed
         # Generate all possible combinations of options
         combinations = list(product(['on', ''], repeat=len(options)))
 
-        # Use ThreadPoolExecutor to parallelize requests
-        with ThreadPoolExecutor(max_workers=concurrent.futures.thread._threads_queues.MaxSize) as executor:
-            executor.map(check_k_anonymity, [{option: state for option, state in zip(options, combo)} for combo in combinations])
+        # Submit tasks to the executor
+        executor.map(check_k_anonymity, [{option: state for option, state in zip(options, combo)} for combo in combinations])
 
-        # Add your code here to close the web page if needed
-        print(f"No successful attempt for K-anonymity {k_anonymity}. Retrying...")
+    # Add your code here to close the web page if needed
+    print(f"No successful attempt for K-anonymity {k_anonymity}. Retrying...")
 else:
     print("K-anonymity element not found. Check the HTML structure.")
