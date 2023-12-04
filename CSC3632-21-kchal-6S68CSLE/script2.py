@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlencode
+from itertools import product  # Import the product function
 from concurrent.futures import ThreadPoolExecutor
 import concurrent.futures.thread
 
