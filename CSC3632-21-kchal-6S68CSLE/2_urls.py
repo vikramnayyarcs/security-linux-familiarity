@@ -59,7 +59,7 @@ while True:
 
         response_2 = requests.get(url_2)
         print("***AFTER URL 2:***")
-        print(response_2.text)
+        #print(response_2.text)
 
         # Check if 'flag' is in the response text
         if 'flag' in response_2.text:
